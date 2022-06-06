@@ -2,12 +2,18 @@ let guess = document.getElementById('number');
 const button = document.querySelector('button');
 const feedback = document.querySelector('.feedback p');
 const magic = document.querySelector('.magic p span');
-const randomNum = Math.floor(Math.random()*100+1);
+let randomNum = Math.floor(Math.random()*100+1);
 let lives = 8;
-let end = false;
 
-button.addEventListener('click', () =>{
+
+button.addEventListener('click', guessTheNumber);
+
+function guessTheNumber(){
     if (button.innerText == 'Restart'){
+        randomNum = Math.floor(Math.random()*100+1);
+        guess.min = '1';
+        guess.max = '100';
+        intervalUpdate();
         lives = 8;
         magic.innerText = lives;
         guess.value = '';
@@ -39,7 +45,7 @@ button.addEventListener('click', () =>{
                 button.innerText = 'Restart';
             }
     }
-})
+}
 
 function zeroCheck(){
     if (lives == 0){
