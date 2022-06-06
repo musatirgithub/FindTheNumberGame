@@ -12,21 +12,21 @@ button.addEventListener('click', () =>{
         magic.innerText = lives;
         guess.value = '';
         button.innerText = 'CHECK';
+        feedback.innerText = '';
     } else{
-        if (lives == 0){
-            feedback.innerText = `Sorry you lost! The number was ${randomNum}.`
-        }else {
             if (guess.value == ''){
-                feedback.innerText = 'Click after entering a number!';
+                feedback.innerText = 'Click check button after entering a number!';
             } else if (randomNum > guess.value){
                 feedback.innerText = 'Try a higher number!';
                 lives--;
+                zeroCheck();
                 guess.value = '';
                 magic.innerText = lives;
                 lives || (button.innerText = 'Restart');
             } else if (randomNum < guess.value){
                 feedback.innerText = 'Try a lower number!';
                 lives--;
+                zeroCheck();
                 guess.value = '';
                 magic.innerText = lives;
                 lives || (button.innerText = 'Restart');
@@ -34,6 +34,11 @@ button.addEventListener('click', () =>{
                 feedback.innerText = 'Congratulations!';
                 button.innerText = 'Restart';
             }
-        }
     }
 })
+
+function zeroCheck(){
+    if (lives == 0){
+        feedback.innerText = `Sorry you lost! The number was ${randomNum}.`
+    }
+}
