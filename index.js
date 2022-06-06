@@ -7,6 +7,11 @@ let lives = 8;
 
 
 button.addEventListener('click', guessTheNumber);
+guess.addEventListener('keydown',(event)=>{
+    if (event.key == 'Enter'){
+        guessTheNumber();
+    }
+})
 
 function guessTheNumber(){
     if (button.innerText == 'Restart'){
@@ -21,8 +26,11 @@ function guessTheNumber(){
         feedback.innerText = '';
     } else{
             if (guess.value == ''){
-                feedback.innerText = 'Click check button after entering a number!';
-            } else if (randomNum > guess.value){
+                feedback.innerText = 'Enter a valid number!';
+            } else if (Number(guess.value) > Number(guess.max) || Number(guess.value) < Number(guess.min)) {
+                feedback.innerText = `${guess.value} is not within valid interval!`;
+                guess.value = '';
+            }else if (randomNum > guess.value){
                 feedback.innerText = 'Try a higher number!';
                 lives--;
                 guess.min = guess.value;
