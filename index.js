@@ -19,6 +19,8 @@ button.addEventListener('click', () =>{
             } else if (randomNum > guess.value){
                 feedback.innerText = 'Try a higher number!';
                 lives--;
+                guess.min = guess.value;
+                intervalUpdate();
                 zeroCheck();
                 guess.value = '';
                 magic.innerText = lives;
@@ -26,7 +28,9 @@ button.addEventListener('click', () =>{
             } else if (randomNum < guess.value){
                 feedback.innerText = 'Try a lower number!';
                 lives--;
+                guess.max = guess.value;
                 zeroCheck();
+                intervalUpdate();
                 guess.value = '';
                 magic.innerText = lives;
                 lives || (button.innerText = 'Restart');
@@ -41,4 +45,8 @@ function zeroCheck(){
     if (lives == 0){
         feedback.innerText = `Sorry you lost! The number was ${randomNum}.`
     }
+}
+
+function intervalUpdate(){
+    document.querySelector('h1').innerText = `Guess The Number (${guess.min} - ${guess.max})`;
 }
