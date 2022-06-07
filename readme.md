@@ -7,7 +7,7 @@
   <li>Limited number interval both at the beginning and at each attempt,</li>
   <li>Returned an alert in case user enters a number out of the interval,</li>
   <li>Turned "CHECK" button into "Restart" button at the end of the game,</li>
-  <li>Turned "Restart" button into "CHECK" button if user wants to play again,</li>
+  <li>Turned "Restart" button into "CHECK" button if user clicks "Restart",</li>
   <li>Navigated through DOM elements by using commands like getElementById, querySelector, querySelectorAll, parentElement etc.,</li>
   <li>Gif image of the project is below 👇. Hope you like my project! </li>
 </ul>  
