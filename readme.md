@@ -4,8 +4,8 @@
   <li>First I've created a random number between 1-100 by using Math random method,</li>
   <li>Added Event listeners to both click  and keydown events,</li>
   <li>Navigated through DOM elements by using commands like getElementById, querySelector, querySelectorAll, parentElement etc.,</li>
-  <li>Checked whether the number is empty and if empty returned an alert,</li>
-  <li>Limited number interval both at the beginning and at each attempt,</li>
+  <li>Checked whether the number is empty and if number was empty I've returned an alert,</li>
+  <li>I've limited number interval both at the beginning of the game and after each attempt,</li>
   <li>Returned an alert in case user enters a number out of the interval,</li>
   <li>Turned "CHECK" button into "Restart" button at the end of the game,</li>
   <li>Turned "Restart" button into "CHECK" button if user clicks "Restart",</li>
