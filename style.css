@@ -14,10 +14,11 @@ body{
     justify-content: center;
     align-items: center;
     color: rgb(230, 223, 223);
+    height: 100vh;
 }
 
 h1{
-    margin: 6rem;
+    margin: 0 auto 2rem;
 }
 
 input, button{
@@ -38,11 +39,23 @@ button{
 }
 .magic{
     margin-top: 5rem;
-
+    font-size: 2rem;
 }
 
 .feedback{
     margin-top: 4.5rem;
     font-size: 3rem;
     
+}
+
+@media screen and (max-width: 650px){
+
+    h1{
+        font-size: 1.4rem;
+        margin: 0 auto 2rem;
+    }
+
+    .feedback{
+        font-size: 2rem;
+    }
 }
